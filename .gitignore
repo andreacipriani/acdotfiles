@@ -6,5 +6,8 @@
 # Thumbnails
 ._*
 
+# ohmyzsh
+oh-my-zsh
+
 # ohmyzsh plugins
 custom/plugins/*
