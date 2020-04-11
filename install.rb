@@ -21,8 +21,9 @@ end
 dootfiles_root = Dir.pwd
 oh_my_zsh_root = "#{dootfiles_root}/oh-my-zsh"
 oh_my_zsh_themes_root = "#{oh_my_zsh_root}/themes"
+oh_my_zsh_custom_plugins_root = "#{oh_my_zsh_root}/custom/plugins"
 
-# Install:
+# Start Install script:
 puts "Running install.rb".info
 
 # Install brew
@@ -34,18 +35,17 @@ else
 end
 
 # Install ohmyzsh
-if File.directory?(ENV['HOME']+'/code/acdotfiles/oh-my-zsh')
+if File.directory?(oh_my_zsh_root)
     puts "ohmyzsh is installed".success
     system("upgrade_oh_my_zsh")
 else
     puts "Installing ohmyzsh".info
     # Change the install directory with the ZSH environment variable
-    ENV['ZSH']="#{ENV['HOME']}/code/acdotfiles/oh-my-zsh"
+    ENV['ZSH']=oh_my_zsh_root
     system("sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"")
 end
 
 # Make a symbolic link for the .zshrc 
-
 system("ln -sfn #{dootfiles_root}/zshrc #{ENV['HOME']}/.zshrc")
 if File.symlink?(ENV['HOME']+'/.zshrc')
     puts ".zshrc is symlinked from #{dootfiles_root}".success
@@ -61,7 +61,13 @@ else
     system("git clone git@github.com:powerline/fonts.git ~/powerline-fonts && cd ~/powerline-fonts && ./install.sh")
 end
 
-# Install ohmyzsh plugins
+# Install ohmyzsh custom plugins
+if File.directory?(oh_my_zsh_custom_plugins_root+"/alias-tips")
+    puts "Alias-tips plugin is installed".success
+else 
+    puts "Installing alias-tips plugin".info
+    system("git clone https://github.com/djui/alias-tips.git #{oh_my_zsh_custom_plugins_root}/alias-tips")
+end
 
 # Install bullet-train theme
 if File.exist?('./oh-my-zsh/themes/bullet-train.zsh-theme')
@@ -71,7 +77,7 @@ else
     system("curl https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme --output #{oh_my_zsh_themes_root}/bullet-train.zsh-theme")
 end
 
-
 # Set up git config
+
 
 

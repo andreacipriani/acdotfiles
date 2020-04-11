@@ -5,6 +5,22 @@ then
   alias git=$hub_path
 fi
 
+c="cd $CODE"
+
+# Quick jumping back into directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+# Fancy colouredls
+alias ls='colorls'
+alias la="ls -lA --sd"
+
+#Copy your public key
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
 # Git aliases
 alias gpm="git push origin master"
 alias gpr='git pull --rebase'

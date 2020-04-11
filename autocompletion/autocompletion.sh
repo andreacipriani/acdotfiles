@@ -36,3 +36,8 @@ _rbenv() {
 
   reply=("${(ps:\n:)completions}")
 }
+
+### SPM Autocompletion
+# https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md#resolving-versions-packageresolved-file
+# Assuming _swift in is in the current folder
+# fpath=(. \$fpath)

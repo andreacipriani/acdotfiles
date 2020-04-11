@@ -1,6 +1,7 @@
 # @AndreaCipriani dotfiles
 
 ## Principles:
+
 - Everything under `~/dotfiles/load/` gets loaded into your terminal
 	- `/load/path.sh` is loaded first
 	- zsh automcompletion suggestions are only inside `~/dotfiles/load/autocompletion.sh`
@@ -11,20 +12,31 @@
 
 ## Assumptions:
 
-
 - mac os
 - zsh
 - ohmyzsh
 - iTerm 2
 - There is a `~/code` folder with all your Projects
 
-### Install.rb
+## TODO:
 
-Step 0:
-
-- install brew
-- install zsh
-- install ohmyzsh
+- Git config
+- Git config change on work directories
+- encrypt/decrypt private aliases
+- Install brew packages/gems/apps automatically
+- Backup
+  - Visual studio code
+    - extensions (~/.vscode/extensions)
+    - settings: synced using Settings sync extension -> https://gist.github.com/andreacipriani/1ba00e8f9773857f46eae2845f8e9ac8
+  - Xcode UserData folder
+  - iTerm
+    - preferences
+    - theme is in iterm/one-dark996.itermcolors
+	- config: On Profiles press Other Actions and Import JSON Profiles, select iterm/iterm_config.json
+  - Alfred preferences
+  - Brew packages backup
+  - Gems
+  - Apps from Appstore backup
 
 ### Credits
 
