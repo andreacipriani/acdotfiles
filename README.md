@@ -4,8 +4,8 @@
 
 - Everything under `~/dotfiles/load/` gets loaded into your terminal
 	- `/load/path.sh` is loaded first
-	- zsh automcompletion suggestions are only inside `~/dotfiles/load/autocompletion.sh`
-	- Everything inside `~/dotfiles/load/private` gets encrypted and won't be shown on the public repo
+	- zsh automcompletion suggestions are only inside `~/dotfiles/autocompletion`
+	- Everything inside `~/dotfiles/load/private` gets encrypted before being pushed to the repo, you can add here work related stuff
 - Run `install.rb` to get everything set up, or when you change machine.
  - The installation is idempotent, you can run it multiple times and you should be in the same state
 - Run `backup.rb` to save all changes
