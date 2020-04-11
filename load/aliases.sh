@@ -5,7 +5,8 @@ then
   alias git=$hub_path
 fi
 
-c="cd $CODE"
+alias c="cd $CODE"
+alias dotfiles="cd $DOTFILES"
 
 # Quick jumping back into directories
 alias ..="cd .."
