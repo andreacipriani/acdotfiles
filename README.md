@@ -20,8 +20,6 @@
 
 ## TODO:
 
-- Git config
-- Git config change on work directories
 - encrypt/decrypt private aliases
 - Install brew packages/gems/apps automatically
 - Backup
