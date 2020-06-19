@@ -53,7 +53,6 @@ BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=red
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-         git
          alias-tips
          rbenv
          ruby
