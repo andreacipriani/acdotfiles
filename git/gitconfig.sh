@@ -1,15 +1,20 @@
-[include]
-        #TODO: change local gitconfig based on folder Work/Personal
-        path = ~/.gitconfig.local
+[user]
+    name = Andrea Cipriani
+	email = andreacipriani89@gmail.com
+# Conditionally override the git username and email for 
+[includeIf "gitdir:~/code/spotify/"] 
+	# I can't make it work with a relative path nor using env variables
+    path = ~/code/acdotfiles/git/gitworkconfig.sh
 [hub]
         protocol = https
+	host = ghe.spotify.net
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
 [core]
-	excludesfile = ./global/.gitignore
+	excludesfile = ~/code/acdotfiles/git/global/.gitignore
 	editor = $EDITOR -n -w
 [apply]
         whitespace = nowarn
@@ -36,9 +41,6 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[user]
-	name = Andrea Cipriani
-	email = andreacipriani89@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -49,3 +51,6 @@
 	tool = opendiff
 [diff]
 	tool = opendiff
+	submodule = log
+[status]
+	submodulesummary = 1

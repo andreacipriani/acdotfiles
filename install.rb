@@ -79,5 +79,11 @@ end
 
 # Set up git config
 
+system("ln -sfn #{dootfiles_root}/git/gitconfig.sh #{ENV['HOME']}/.gitconfig")
+if File.symlink?(ENV['HOME']+'/.gitconfig')
+    puts ".gitconfig is symlinked from #{dootfiles_root}".success
+else 
+    puts ".gitconfig is not symlinked from #{dootfiles_root}".error
+end
 
 
