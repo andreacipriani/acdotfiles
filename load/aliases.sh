@@ -63,8 +63,25 @@ alias pi='pod install --repo-update'
 quitxcodecmd="tell application \"Xcode\" to quit"
 alias quitxcode="osascript -e '$quitxcodecmd'"
 
+# Filesystem shorcuts
+alias goios="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/client-ios"
+alias gospt="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/"
+alias gotuist="cd /Users/$ANDREA_USERNAME/code/github/andreacipriani/tuist"
+alias gogithub="cd /Users/$ANDREA_USERNAME/code/github/andreacipriani"
+alias goclient="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/client"
+
 # Rails
 alias rails="bundle exec rails"
+
+# Functions
+
+bazopen() {
+  rm -rf base/$1/$1.xcodeproj
+  pkill -f '/Applications/Xcode(-beta)?.app/Contents/MacOS/Xcode'
+  PROJECT=base/$1/project.yaml make xcode
+  xed base/$1/$1.xcodeproj
+}
+
 gcom() {
   if [ `git branch --list main` ];
   then 
@@ -73,6 +90,25 @@ gcom() {
     git checkout master
   fi
 }
+
+xcregenonly() {
+  echo "Closing Xcode"
+  pkill -f '/Applications/Xcode(-beta)?.app/Contents/MacOS/Xcode'
+  echo "Generating project"
+  rake generate
+  echo "Opening project"
+  rake ws
+}
+
+xcregenonly() {
+  echo "Closing Xcode"
+  pkill -f '/Applications/Xcode(-beta)?.app/Contents/MacOS/Xcode'
+  echo "Generating project"
+  rake generate:generate_only
+  echo "Opening project"
+  rake ws
+}
+
 # Open in Xcode, credits to @orta
 xcode(){ 
   if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
