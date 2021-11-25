@@ -34,3 +34,6 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES/
 
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Skip Xcode refactoring animation
+defaults write com.apple.dt.Xcode CodeFoldingAnimationSpeed -int 0
