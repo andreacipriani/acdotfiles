@@ -38,7 +38,16 @@ scdh() {
   cd "$dir"
 }
 
+# scat - fuzzy cat content of selecte file
+
+scat() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  cat ${files[@]}
+}
+
 # shr - fuzzy search in history
+
 shr() {
   local cmd
   cmd=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf-tmux +s --tac | sed 's/ *[0-9]* *//')
