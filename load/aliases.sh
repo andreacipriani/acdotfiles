@@ -5,6 +5,7 @@ then
   alias git=$hub_path
 fi
 
+alias openalias="$EDITOR $DOTFILES/load/aliases.sh"
 alias aliases="$EDITOR $DOTFILES/load/aliases.sh"
 alias c="cd $CODE"
 alias dotfiles="cd $DOTFILES"
@@ -37,7 +38,6 @@ alias grmi="git fetch && git rebase origin/master -i"
 alias gall="git add ."
 alias gca='git commit -a'
 alias gco='git checkout'
-alias gcom='git checkout master'
 alias gcb='git checkout -b'
 alias gb='git branch'
 alias gac='git add -A && git commit -m'
@@ -47,9 +47,12 @@ alias gclean= "git gc --aggressive && git prune"
 alias gcpc="gitc cherry-pick --continue"
 alias gcm="git commit -m"
 alias gcan="git commit --amend --no-edit"
+alias gdiff="git diff --color-moved"
+
+# Git with forks
+alias gsync="git fetch upstream && git checkout master && git merge upstream/master"
 
 # Remove `+` and `-` from start of diff lines; just rely upon color.
-alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
 alias gfix="git diff --name-only | uniq | xargs git mergetool"
 
 #Xcode aliases
@@ -57,7 +60,19 @@ alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simu
 alias xcodetemplates='cd ~/Library/Developer/Xcode/Templates/'
 alias cleanderivedata='rm -Rf ~/Library/Developer/Xcode/DerivedData'
 alias pi='pod install --repo-update'
+quitxcodecmd="tell application \"Xcode\" to quit"
+alias quitxcode="osascript -e '$quitxcodecmd'"
 
+# Rails
+alias rails="bundle exec rails"
+gcom() {
+  if [ `git branch --list main` ];
+  then 
+    git checkout main
+  else
+    git checkout master
+  fi
+}
 # Open in Xcode, credits to @orta
 xcode(){ 
   if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
