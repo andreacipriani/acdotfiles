@@ -54,3 +54,6 @@
 	submodule = log
 [status]
 	submodulesummary = 1
+[push]
+	default = simple
+
