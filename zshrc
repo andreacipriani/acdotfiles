@@ -65,4 +65,4 @@ export PATH="$PATH:/usr/bin:/usr/local/bin/"
 # ----
 source $ZSH/oh-my-zsh.sh
 # Created by `userpath` on 2020-10-19 17:05:58
-export PATH="$PATH:/Users/$ANDREA_USERNAME/.local/bin"
+export PATH="$PATH:/Users/${ANDREA_USERNAME}/.local/bin"
