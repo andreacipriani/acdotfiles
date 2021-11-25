@@ -1,3 +1,4 @@
+export ANDREA_USERNAME=`whoami`
 export DOTFILES=$HOME/code/acdotfiles #dotfiles folder
 export ZSH=$DOTFILES/oh-my-zsh #ohmyzsh folder
 export CODE=~/code #all code projects folder
@@ -45,7 +46,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
 )
 BULLETTRAIN_STATUS_EXIT_SHOW=true
-BULLETTRAIN_CONTEXT_DEFAULT_USER="acipriani"
+BULLETTRAIN_CONTEXT_DEFAULT_USER=$ANDREA_USERNAME
 BULLETTRAIN_DIR_EXTENDED=2 #show complete dir path
 BULLETTRAIN_GIT_BG=green
 BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=red
@@ -58,4 +59,10 @@ plugins=(
          ruby
          )
 
+export PATH="$PATH:/usr/bin:/usr/local/bin/"
+
+
+# ----
 source $ZSH/oh-my-zsh.sh
+# Created by `userpath` on 2020-10-19 17:05:58
+export PATH="$PATH:/Users/$ANDREA_USERNAME/.local/bin"
