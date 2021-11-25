@@ -1,0 +1,3 @@
+git/gitworkconfig.sh filter=git-crypt diff=git-crypt
+work/** filter=git-crypt diff=git-crypt
+.gitattributes !filter !diff
