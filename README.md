@@ -9,6 +9,7 @@
 - Run `install.rb` to get everything set up, or when you change machine.
  - The installation is idempotent, you can run it multiple times and you should be in the same state
 - Run `backup.rb` to save all changes
+- Everything under `work-encrypted` will be encrypted
 
 ## Assumptions:
 
@@ -20,7 +21,6 @@
 
 ## TODO:
 
-- encrypt/decrypt private aliases
 - Install brew packages/gems/apps automatically
 - Backup
   - Visual studio code
