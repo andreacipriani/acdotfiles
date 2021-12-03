@@ -4,6 +4,8 @@ export ZSH=$DOTFILES/oh-my-zsh #ohmyzsh folder
 export CODE=~/code #all code projects folder
 export EDITOR='code'
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # First load the path file
 path_file=$DOTFILES/load/path.sh
 source $path_file
@@ -35,10 +37,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # disable auto correction
 ENABLE_CORRECTION="false"
 
-#Colorize different commands
+# Colorize different commands
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
 # Theme and prompt https://github.com/caiogondim/bullet-train.zsh
+export TERM="xterm-256color"
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
   dir
@@ -54,15 +57,10 @@ BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=red
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-         alias-tips
-         rbenv
-         ruby
-         )
+  alias-tips
+  rbenv
+  ruby
+)
 
-export PATH="$PATH:/usr/bin:/usr/local/bin/"
-
-
-# ----
 source $ZSH/oh-my-zsh.sh
-# Created by `userpath` on 2020-10-19 17:05:58
-export PATH="$PATH:/Users/${ANDREA_USERNAME}/.local/bin"
+export PATH="$PATH:/usr/bin:/usr/local/bin/"
