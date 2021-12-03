@@ -30,10 +30,7 @@
     - theme is in iterm/one-dark996.itermcolors
 	- config: On Profiles press Other Actions and Import JSON Profiles, select iterm/iterm_config.json
   - Alfred preferences
-  - Brew packages backup
-  - Gems
-  - Apps from Appstore backup
 
 ### Credits
 
-Inspired by @holman dotfiles. I diverged from it because I wanted to keep it simple, use heavily ohmzsh and have more control.
+Initially inspired by @holman dotfiles. I diverged from it because I wanted to keep it simple, understand everything and heavily depend on ohmzsh.
