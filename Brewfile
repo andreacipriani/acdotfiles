@@ -130,3 +130,8 @@ mas "Telegram", id: 747648890
 mas "Tomato One", id: 907364780
 mas "Trello", id: 1278508951
 mas "WhatsApp", id: 1147396723
+mas "LastPass", id: 926036361
+mas "Slack", id: 803453959
+mas "Trello", id: 1278508951
+mas "Twitter", id: 409789998
+mas "Xcode", id: 497799835

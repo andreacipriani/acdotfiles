@@ -14,4 +14,8 @@ class String
     def success
         log("✅ ", 32)
     end
+
+    def warning
+        log("🔸", 31)
+    end  
 end
