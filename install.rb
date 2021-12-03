@@ -37,6 +37,10 @@ else
     puts ".zshrc is not symlinked from #{dootfiles_root}".error
 end
 
+# Install all gems from Gemfile:
+puts "Running bundle install to install all gems in Gemile".info
+system("bundle install")
+
 # Install fonts
 if File.directory?(ENV['HOME']+'/powerline-fonts')
     puts "Powerline-fonts are installed".success

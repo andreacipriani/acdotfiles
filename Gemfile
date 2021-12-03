@@ -1,104 +1,55 @@
-abbrev
-ast
-base64
-benchmark
-bigdecimal
-bundler
-cgi
-csv
-date
-debug
-delegate
-did_you_mean
-diff-lcs
-digest
-drb
-english
-erb
-error_highlight
-etc
-fakefs
-fcntl
-fiddle
-fileutils
-find
-forwardable
-getoptlong
-io-console
-io-nonblock
-io-wait
-ipaddr
-irb
-json
-logger
-matrix
-minitest
-mutex_m
-net-ftp
-net-http
-net-imap
-net-pop
-net-protocol
-net-smtp
-nkf
-nokogiri
-observer
-open-uri
-open3
-openssl
-optparse
-ostruct
-parallel
-parser
-pathname
-power_assert
-pp
-prettyprint
-prime
-pstore
-psych
-racc
-rainbow
-rake
-rbs
-rdoc
-readline
-readline-ext
-regexp_parser
-reline
-resolv
-resolv-replace
-rexml
-rinda
-rspec
-rspec-core
-rspec-expectations
-rspec-mocks
-rspec-support
-rspec_junit_formatter
-rss
-rubocop
-rubocop-ast
-rubocop-rspec
-ruby-progressbar
-ruby2_keywords
-securerandom
-set
-shellwords
-singleton
-stringio
-strscan
-syslog
-tempfile
-test-unit
-time
-timeout
-tmpdir
-tsort
-typeprof
-un
-unicode-display_width
-uri
-weakref
-yaml
-zlib
+source 'https://rubygems.org'
+
+gem 'activemodel'
+gem 'activerecord'
+gem 'activestorage'
+gem 'activesupport'
+gem 'atomos'
+gem 'bugsnag'
+gem 'builder'
+gem 'bundler'
+gem 'cgi'
+gem 'chartkick'
+gem 'cocoapods'
+gem 'coffee-rails'
+gem 'coffee-script'
+gem 'coffee-script-source'
+gem 'colored2'
+gem 'colorize'
+gem 'csv'
+gem 'cucumber'
+gem 'date'
+gem 'dbm'
+gem 'declarative'
+gem 'declarative-option'
+gem 'delegate'
+gem 'devise'
+gem 'did_you_mean'
+gem 'diff-lcs'
+gem 'e2mmap'
+gem 'encryptor'
+gem 'erubi'
+gem 'escape'
+gem 'etc'
+gem 'ethon'
+gem 'execjs'
+gem 'fcntl'
+gem 'ffi'
+gem 'fiddle'
+gem 'fileutils'
+gem 'forwardable'
+gem 'fourflusher'
+gem 'fuzzy_match'
+gem 'gh_inspector'
+gem 'globalid'
+gem 'nokogiri'
+gem 'openssl'
+gem 'rails'
+gem 'rake'
+gem 'rspec'
+gem 'rubocop'
+gem 'sentry-raven'
+gem 'sidekiq'
+gem 'simctl'
+gem 'sqlite3'
+gem 'yaml'
