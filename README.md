@@ -2,20 +2,21 @@
 
 ## Principles:
 
+- Run `install.rb` to get all your apps and tools installed
+	- The installation is idempotent, you can run it multiple times and you should be in the same state
 - Everything under `~/dotfiles/load/` gets loaded into your terminal
 	- `/load/path.sh` is loaded first
 	- zsh automcompletion suggestions are only inside `~/dotfiles/autocompletion`
-	- everything under `work-encrypted/` will be encrypted
-- Run `install.rb` to get everything set up, or when you change machine.
-- The installation is idempotent, you can run it multiple times and you should be in the same state
+- All files under `work-encrypted/` will be encrypted
 - Run `backup.rb` to save all changes
 
 ## Installation order:
 
 - macOS
-- Install iTerm 2
 - Clone the repo and run `ruby install.rb`
-
+- Setup iTerm
+- Setup Alfred
+- 
 ## TODO:
 
 - Backup
