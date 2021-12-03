@@ -14,9 +14,10 @@
 
 - macOS
 - Clone the repo and run `ruby install.rb`
-- Setup iTerm
-- Setup Alfred
-- 
+- Setup iTerm by restoring preferences, setting the theme and configuration
+- Setup Visual Studio code by syncing with account
+- Setup Alfred 
+
 ## TODO:
 
 - Backup
