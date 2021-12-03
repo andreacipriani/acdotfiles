@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>agchttpjson</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *targetUrl = @"https://jsonplaceholder.typicode.com/todos/1";
+NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+[request setHTTPMethod:@"GET"];
+[request setURL:[NSURL URLWithString:targetUrl]];
+[[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
+^(NSData * _Nullable data,
+NSURLResponse * _Nullable response,
+NSError * _Nullable error) {
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&amp;error];
+    NSLog(@"Data received: %@", jsonObject);
+    }] resume];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1A1345C5-426F-4C43-9E1F-979FD9774E6D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Fetch and parse JSON in Objc</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Objective-C: HTTP get + JSON</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

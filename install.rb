@@ -77,4 +77,12 @@ else
     system("mkdir /Users/#{ENV['USER']}/code/")
 end
 
+# Install Xcode User Data
+if File.exist?(ENV['HOME']+'/Library/Developer/Xcode/UserData/FontAndColorThemes/AndreaCiprianiDark.xccolortheme')
+    puts "Xcode UserData folder exists".success
+else
+    puts "Installing Xcode UserData folder".info
+    system("rsync -r backups/Xcode/ /Users/#{ENV['USER']}/Library/Developer/Xcode")
+end
+
 system("brew bundle")

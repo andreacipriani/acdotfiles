@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>38377407-D82C-4F57-95EA-DA33F215D93D</key>
+	<array/>
+	<key>501CAFBF-2879-4E08-9E2D-B5B0423A46B1</key>
+	<array>
+		<string>AppSpecs.OfflineModelsCleanupMigrationPolicyIntegrationSpec.test_content_hasBeenExtractedToTheOfflineStore()</string>
+		<string>AppSpecs.CDPlaylistToUnifiedPlaylistMigrationTests.test_userGeneratedPlaylist_shouldHave_playlistUpadatedAtDataIsNotNil</string>
+		<string>AppSpecs.CoreDataMigrationTests.test_migrate_wasAttempted_wasSuccessful_noError</string>
+	</array>
+	<key>F4DD67B8-B701-4545-B07F-D82CA5512065</key>
+	<array>
+		<string>AppSpecs.UserToUserMigrationPolicySpec</string>
+	</array>
+</dict>
+</plist>
