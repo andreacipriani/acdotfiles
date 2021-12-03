@@ -16,6 +16,7 @@
 - Install Xcode + developer tools
 - Install iTerm 2
 - Install zsh + ohmyzsh
+- Install brew
 - There is a `~/code` folder with all your Projects
 
 ## TODO:
