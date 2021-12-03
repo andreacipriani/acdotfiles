@@ -1,22 +1,5 @@
 #!/usr/bin/ruby
-
-# A simple extension to make colorful logs with emojis
-class String
-    def log(prefix, color_code)
-        "#{prefix}\e[#{color_code}m#{self}\e[0m"
-    end
-    def error
-        log("❌ ", 31)
-    end
-
-    def info
-        log("", 34)
-    end  
-
-    def success
-        log("✅ ", 32)
-    end
-end
+require_relative("scripts/logger.rb")
 
 dootfiles_root = Dir.pwd
 oh_my_zsh_root = "#{dootfiles_root}/oh-my-zsh"
@@ -41,6 +24,7 @@ if File.directory?(oh_my_zsh_root)
 else
     puts "Installing ohmyzsh".info
     # Change the install directory with the ZSH environment variable
+    # This should create a ohmyzsh folder in the root of my dotfiles, which is gitignored
     ENV['ZSH']=oh_my_zsh_root
     system("sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"")
 end
@@ -78,7 +62,6 @@ else
 end
 
 # Set up git config
-
 system("ln -sfn #{dootfiles_root}/git/gitconfig.sh #{ENV['HOME']}/.gitconfig")
 if File.symlink?(ENV['HOME']+'/.gitconfig')
     puts ".gitconfig is symlinked from #{dootfiles_root}".success
@@ -86,4 +69,12 @@ else
     puts ".gitconfig is not symlinked from #{dootfiles_root}".error
 end
 
+# Create code folder
+if File.directory?("/Users/#{ENV['USER']}/code/")
+    puts "code directory existed".success
+else
+    puts "creating code directory".info
+    system("mkdir /Users/#{ENV['USER']}/code/")
+end
 
+system("brew bundle")
