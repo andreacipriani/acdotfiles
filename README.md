@@ -2,7 +2,7 @@
 
 ## Principles:
 
-- Run `install.rb` to get all your apps and tools installed
+- Run `ruby install.rb` to get all your apps and tools installed
 	- The installation is idempotent, you can run it multiple times and you should be in the same state
 - Everything under `~/dotfiles/load/` gets loaded into your terminal
 	- `/load/path.sh` is loaded first
@@ -13,6 +13,7 @@
 ## Installation order:
 
 - macOS
+- ruby
 - Clone the repo and run `ruby install.rb`
 - Setup iTerm by restoring preferences, setting the theme and configuration
 - Setup Visual Studio code by syncing with account
