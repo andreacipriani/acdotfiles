@@ -8,7 +8,7 @@
 	- `/load/path.sh` is loaded first
 	- zsh automcompletion suggestions are only inside `~/dotfiles/autocompletion`
 - All files under `work-encrypted/` will be encrypted
-- Run `backup.rb` to save all changes
+- Run `ruby scripts/backup.rb` to save all changes
 
 ## Installation order:
 
