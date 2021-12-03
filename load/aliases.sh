@@ -1,9 +1,6 @@
 # Use `hub` as a git wrapper - http://defunkt.github.com/hub/
-hub_path=$(which hub)
-if (( $+commands[hub] ))
-then
-  alias git=$hub_path
-fi
+# hub_path=$(which hub)
+# alias git=$hub_path
 
 alias openalias="$EDITOR $DOTFILES/load/aliases.sh"
 alias aliases="$EDITOR $DOTFILES/load/aliases.sh"
@@ -30,8 +27,7 @@ alias gpm="git push origin master"
 alias gpr='git pull --rebase'
 alias gst="git status -sb"
 alias glog="git log --oneline --decorate"
-alias gp='git push origin HEAD'
-alias gpo="git push --set-upstream origin $(git branch | awk '/^\* / { print $2 }')"
+alias gp="git push origin HEAD"
 alias grbc="gitc rebase --continue"
 alias grm="git fetch && git rebase origin/master"
 alias grmi="git fetch && git rebase origin/master -i"
