@@ -1,3 +1,9 @@
+# https://github.com/Homebrew/homebrew-bundle
+
+# specify a directory to install
+cask_args appdir: '/Applications'
+
+tap "buo/cask-upgrade"
 tap "ericm/stonks"
 tap "github/gh"
 tap "heroku/brew"
@@ -6,8 +12,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "mxcl/made"
-tap "spotify/public"
-tap "spotify/sptaps", "git@ghe.spotify.net:shared/homebrew-spotify.git"
+
 brew "ack"
 brew "atuin"
 brew "automake"
@@ -58,7 +63,7 @@ brew "pcsc-lite"
 brew "postgresql"
 brew "pyenv"
 brew "ranger"
-brew "ruby-build", args: ["HEAD"]
+brew "ruby-build"
 brew "rbenv"
 brew "ripgrep"
 brew "roundup"
@@ -88,21 +93,34 @@ brew "yarn"
 brew "yq"
 brew "heroku/brew/heroku"
 brew "mxcl/made/swift-sh"
-brew "spotify/public/gcs-avro-tools"
-brew "spotify/public/gcs-parquet-tools"
-brew "spotify/public/gcs-proto-tools"
-brew "spotify/public/scio"
-brew "spotify/sptaps/styx-cli"
-cask "adium", args: { appdir: "/Applications" }
-cask "corretto"
-cask "corretto8"
-cask "google-cloud-sdk"
-cask "rq"
-cask "screen"
-cask "simsim"
-cask "vlc", args: { appdir: "/Applications" }
+
+# Casks
+cask 'visual-studio-code'
+cask 'google-drive'
+cask 'google-chrome'
+cask 'vlc'
+cask 'dropbox'
+cask 'alfred'
+cask 'evernote'
+cask 'skype'
+cask 'virtualbox'
+cask 'spotify'
+cask 'macdown'
+cask 'telegram'
+cask 'whatsapp'
+cask 'evernote'
+cask 'sourcetree'
+cask 'zoom'
+cask 'charles'
+cask 'the-unarchiver'
+cask 'adium'
+cask 'corretto'
+cask 'corretto8'
+cask 'google-cloud-sdk'
+cask 'rq'
+
+mas "Xcode", id: 497799835
 mas "Evernote", id: 406056744
-mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
