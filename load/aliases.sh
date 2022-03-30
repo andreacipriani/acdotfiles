@@ -71,11 +71,17 @@ alias rails="bundle exec rails"
 
 # Functions
 
+# Open a Bazel Xcode project:
+# $1 = name of project, e.g: "$bazopen Quasar"
 bazopen() {
   rm -rf base/$1/$1.xcodeproj
-  pkill -f '/Applications/Xcode(-beta)?.app/Contents/MacOS/Xcode'
-  PROJECT=base/$1/project.yaml make xcode
-  xed base/$1/$1.xcodeproj
+  if [ "$1" = "mesmerize" ]; then  
+    project_path=base/Sandbox/Applications/Mesmerize/project.yaml
+  else
+    project_path=base/$1/project.yaml
+  fi
+  PROJECT=$project_path make xcode
+  xed projects/$1.xcodeproj
 }
 
 gcom() {
@@ -85,15 +91,6 @@ gcom() {
   else
     git checkout master
   fi
-}
-
-xcregenonly() {
-  echo "Closing Xcode"
-  pkill -f '/Applications/Xcode(-beta)?.app/Contents/MacOS/Xcode'
-  echo "Generating project"
-  rake generate
-  echo "Opening project"
-  rake ws
 }
 
 xcregenonly() {
