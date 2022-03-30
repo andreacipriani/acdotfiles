@@ -119,8 +119,6 @@ cask 'corretto8'
 cask 'google-cloud-sdk'
 cask 'rq'
 
-mas "Xcode", id: 497799835
-mas "Evernote", id: 406056744
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766

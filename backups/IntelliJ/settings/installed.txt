@@ -1,6 +1,0 @@
-Pythonid
-com.markskelton.one-dark-theme
-com.spotify.scio-idea
-com.vecheslav.darculaDarkerTheme
-org.intellij.scala
-org.jetbrains.kotlin

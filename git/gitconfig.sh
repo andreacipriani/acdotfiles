@@ -1,6 +1,6 @@
 [user]
-    name = Andrea Cipriani
-	email = andreacipriani89@gmail.com
+	name = Andrea Cipriani
+	email = acipriani@spotify.com
 # Conditionally override the git username and email for 
 [includeIf "gitdir:~/code/spotify/"] 
 	# I can't make it work with a relative path nor using env variables
