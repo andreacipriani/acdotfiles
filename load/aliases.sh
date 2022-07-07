@@ -44,6 +44,9 @@ alias gcpc="gitc cherry-pick --continue"
 alias gcm="git commit -m"
 alias gcan="git commit --amend --no-edit"
 alias gdiff="git diff --color-moved"
+alias gconflicts="git diff --name-only --diff-filter=U --relative"
+alias gopenconflicts="git diff --name-only --diff-filter=U --relative | xargs code"
+alias gaddconflicts="git diff --name-only --diff-filter=U --relative | xargs git add"
 
 # Git with forks
 alias gsync="git fetch upstream && git checkout master && git merge upstream/master"
@@ -65,6 +68,7 @@ alias gospt="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/"
 alias gotuist="cd /Users/$ANDREA_USERNAME/code/github/andreacipriani/tuist"
 alias gogithub="cd /Users/$ANDREA_USERNAME/code/github/andreacipriani"
 alias goclient="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/client"
+alias goandroid="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/client-android"
 
 # Rails
 alias rails="bundle exec rails"
