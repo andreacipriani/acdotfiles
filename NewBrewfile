@@ -1,0 +1,136 @@
+tap "buo/cask-upgrade"
+tap "ericm/stonks"
+tap "github/gh"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "mxcl/made"
+tap "spotify/public"
+tap "spotify/sptaps", "git@ghe.spotify.net:shared/homebrew-spotify.git"
+brew "ack"
+brew "atuin"
+brew "automake"
+brew "bazelisk"
+brew "brew-cask-completion"
+brew "buildifier"
+brew "buildozer"
+brew "python@3.9"
+brew "glib"
+brew "carthage"
+brew "clang-format"
+brew "cloc"
+brew "cmake"
+brew "ruby"
+brew "cocoapods"
+brew "colordiff"
+brew "cookiecutter"
+brew "coreutils"
+brew "cpanminus"
+brew "cypher-shell"
+brew "docker"
+brew "fzf"
+brew "node"
+brew "gatsby-cli"
+brew "gh"
+brew "git-crypt"
+brew "git-lfs"
+brew "go"
+brew "gobject-introspection"
+brew "harfbuzz"
+brew "pango"
+brew "librsvg"
+brew "graphviz"
+brew "grc"
+brew "highlight"
+brew "hub"
+brew "shared-mime-info"
+brew "imagemagick"
+brew "jenv"
+brew "jp2a"
+brew "jq"
+brew "kotlin"
+brew "libfido2"
+brew "libgit2"
+brew "libusb"
+brew "libnfc"
+brew "mas"
+brew "mergepbx"
+brew "mfcuk"
+brew "mfoc"
+brew "mysql"
+brew "needle"
+brew "nvm"
+brew "openssl@3"
+brew "pcsc-lite"
+brew "postgresql@14"
+brew "pyenv"
+brew "python@3.8", link: false
+brew "ranger"
+brew "ruby-build"
+brew "rbenv"
+brew "ripgrep"
+brew "roundup"
+brew "rust"
+brew "sbt"
+brew "scala"
+brew "screen", link: false
+brew "shadowenv"
+brew "sourcery"
+brew "spaceman-diff"
+brew "sponge"
+brew "swift-format"
+brew "swiftformat"
+brew "swiftgen"
+brew "swiftlint"
+brew "the_silver_searcher"
+brew "tig"
+brew "tokei"
+brew "trash"
+brew "tree"
+brew "vapor"
+brew "wget"
+brew "xcodegen"
+brew "yarn"
+brew "yq"
+brew "heroku/brew/heroku"
+brew "spotify/sptaps/techdocs-cli"
+cask "adium", args: { appdir: "/Applications" }
+cask "alfred", args: { appdir: "/Applications" }
+cask "apparency"
+cask "charles", args: { appdir: "/Applications" }
+cask "corretto", args: { appdir: "/Applications" }
+cask "corretto8", args: { appdir: "/Applications" }
+cask "dropbox", args: { appdir: "/Applications" }
+cask "evernote", args: { appdir: "/Applications" }
+cask "google-cloud-sdk", args: { appdir: "/Applications" }
+cask "google-drive", args: { appdir: "/Applications" }
+cask "macdown", args: { appdir: "/Applications" }
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "qlvideo"
+cask "quicklook-json"
+cask "quicklookase"
+cask "rq", args: { appdir: "/Applications" }
+cask "skype", args: { appdir: "/Applications" }
+cask "sourcetree", args: { appdir: "/Applications" }
+cask "spotify", args: { appdir: "/Applications" }
+cask "suspicious-package"
+cask "telegram", args: { appdir: "/Applications" }
+cask "the-unarchiver", args: { appdir: "/Applications" }
+cask "visual-studio-code", args: { appdir: "/Applications" }
+cask "vlc", args: { appdir: "/Applications" }
+cask "whatsapp", args: { appdir: "/Applications" }
+cask "zoom", args: { appdir: "/Applications" }
+cask "zulu11"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LastPass", id: 926036361
+mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Tomato One", id: 907364780
+mas "Trello", id: 1278508951

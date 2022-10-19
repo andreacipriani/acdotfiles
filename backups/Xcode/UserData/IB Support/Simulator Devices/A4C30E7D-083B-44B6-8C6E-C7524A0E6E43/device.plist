@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UDID</key>
+	<string>A4C30E7D-083B-44B6-8C6E-C7524A0E6E43</string>
+	<key>deviceType</key>
+	<string>com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-3-42mm</string>
+	<key>isDeleted</key>
+	<false/>
+	<key>isEphemeral</key>
+	<false/>
+	<key>name</key>
+	<string>Apple Watch Series 3 - 42mm</string>
+	<key>runtime</key>
+	<string>com.apple.CoreSimulator.SimRuntime.watchOS-8-3</string>
+	<key>runtimePolicy</key>
+	<string>Latest</string>
+	<key>state</key>
+	<integer>1</integer>
+</dict>
+</plist>
