@@ -93,7 +93,15 @@ brew "yarn"
 brew "yq"
 brew "heroku/brew/heroku"
 brew "mxcl/made/swift-sh"
-
+brew "qlcolorcode"
+brew "qlstephen"
+brew "qlmarkdown"
+brew "quicklook-json"
+brew "qlimagesize"
+brew "suspicious-package"
+brew "apparency"
+brew "quicklookase"
+brew "qlvideo"
 # Casks
 cask 'visual-studio-code'
 cask 'google-drive'
