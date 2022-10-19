@@ -6,9 +6,9 @@
 	<array/>
 	<key>501CAFBF-2879-4E08-9E2D-B5B0423A46B1</key>
 	<array>
+		<string>AppSpecs.CoreDataMigrationTests.test_migrate_wasAttempted_wasSuccessful_noError</string>
 		<string>AppSpecs.OfflineModelsCleanupMigrationPolicyIntegrationSpec.test_content_hasBeenExtractedToTheOfflineStore()</string>
 		<string>AppSpecs.CDPlaylistToUnifiedPlaylistMigrationTests.test_userGeneratedPlaylist_shouldHave_playlistUpadatedAtDataIsNotNil</string>
-		<string>AppSpecs.CoreDataMigrationTests.test_migrate_wasAttempted_wasSuccessful_noError</string>
 	</array>
 	<key>F4DD67B8-B701-4545-B07F-D82CA5512065</key>
 	<array>
