@@ -68,8 +68,16 @@ sbr() {
 spath() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  # [[ -n "$files" ]] && ${realpath} "${files[@]}"\
   echo ${files[@]}
   echo ${files[@]} | pbcopy
   echo "copyied path: ${files[@]}"
+}
+
+gheios() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  echo ${files[@]}
+  echo ${files[@]} | pbcopy
+  echo "opening path: ${files[@]} on ghe"
+  open "https://TODO/blob/master/${files[@]}"
 }
