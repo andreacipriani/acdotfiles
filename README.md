@@ -15,7 +15,7 @@
 - macOS
 - ruby
 - Clone the repo and run `ruby install.rb`
-- Setup iTerm by restoring preferences, setting the theme (CMD+I, Colors tab, Load Presets, Import) and configuration
+- Setup iTerm by setting the theme (CMD+I, Colors tab, Load Presets, Import) and configuration (Profiles, Other Actions, Import JSON Profiles, select iterm/AndreaCipriani.json)
 - Setup Visual Studio code by syncing with account
 - Setup Alfred 
 
@@ -26,10 +26,6 @@
     - extensions (~/.vscode/extensions)
     - settings: synced using Settings sync extension -> https://gist.github.com/andreacipriani/1ba00e8f9773857f46eae2845f8e9ac8
   - Xcode UserData folder
-  - iTerm
-    - preferences
-    - theme is in iterm/one-dark996.itermcolors
-	- config: On Profiles press Other Actions and Import JSON Profiles, select iterm/iterm_config.json
   - Alfred preferences
 
 ### Credits
