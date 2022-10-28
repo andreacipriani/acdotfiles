@@ -1730,6 +1730,7 @@
 			<string>/Users/andreacipriani</string>
 		</dict>
 	</array>
+<<<<<<< Updated upstream
 	<key>PassOnControlClick</key>
 =======
 			<string>/Users/acipriani</string>
@@ -2441,6 +2442,13 @@
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 >>>>>>> Stashed changes
+=======
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
+	<key>PassOnControlClick</key>
+>>>>>>> Stashed changes
 	<false/>
 	<key>PointerActions</key>
 	<dict>
@@ -2476,6 +2484,9 @@
 		</dict>
 	</dict>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SoundForEsc</key>
