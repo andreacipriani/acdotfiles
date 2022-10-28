@@ -15,7 +15,7 @@
 - macOS
 - ruby
 - Clone the repo and run `ruby install.rb`
-- Setup iTerm by restoring preferences, setting the theme and configuration
+- Setup iTerm by restoring preferences, setting the theme (CMD+I, Colors tab, Load Presets, Import) and configuration
 - Setup Visual Studio code by syncing with account
 - Setup Alfred 
 
