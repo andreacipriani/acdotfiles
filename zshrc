@@ -4,8 +4,7 @@ export ZSH=$DOTFILES/oh-my-zsh #ohmyzsh folder
 export CODE=~/code #all code projects folder
 export EDITOR='code'
 
-brew_path=$(brew --prefix)
-eval "$($brew_path/bin/brew shellenv)"
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # First load the path file
 path_file=$DOTFILES/load/path.sh
