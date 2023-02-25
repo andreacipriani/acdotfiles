@@ -1,29 +1,22 @@
 [user]
 	name = Andrea Cipriani
-	email = acipriani@spotify.com
-# Conditionally override the git username and email for 
-[includeIf "gitdir:~/code/spotify/"] 
-	# I can't make it work with a relative path nor using env variables
-    path = ~/code/acdotfiles/git/gitworkconfig.sh
-[hub]
-        protocol = https
-	host = ghe.spotify.net
+	email = andreacipriani89@gmail.com
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+	status = auto
+    branch = auto
+    ui = true
 [core]
 	excludesfile = ~/code/acdotfiles/git/global/.gitignore
 	editor = $EDITOR -n -w
 [apply]
-        whitespace = nowarn
+    whitespace = nowarn
 [mergetool]
-        keepBackup = false
+    keepBackup = false
 [difftool]
-        prompt = false
+    prompt = false
 [help]
-        autocorrect = 1
+    autocorrect = 1
 [pull]
 	rebase = true
 [rebase]
