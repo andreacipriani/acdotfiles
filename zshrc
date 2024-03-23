@@ -65,3 +65,4 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/usr/bin:/usr/local/bin/"
 export PATH="/Users/acipriani/Library/Python/3.9/bin:$PATH"
+eval "$(/Users/andreacipriani/.local/bin/mise activate zsh)"
