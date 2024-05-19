@@ -95,7 +95,6 @@ brew "xcodegen"
 brew "yarn"
 brew "yq"
 brew "heroku/brew/heroku"
-brew "spotify/sptaps/techdocs-cli"
 cask "adium", args: { appdir: "/Applications" }
 cask "alfred", args: { appdir: "/Applications" }
 cask "apparency"
@@ -117,7 +116,6 @@ cask "rq", args: { appdir: "/Applications" }
 cask "skype", args: { appdir: "/Applications" }
 cask "sourcetree", args: { appdir: "/Applications" }
 cask "spotify", args: { appdir: "/Applications" }
-cask "suspicious-package"
 cask "telegram", args: { appdir: "/Applications" }
 cask "the-unarchiver", args: { appdir: "/Applications" }
 cask "visual-studio-code", args: { appdir: "/Applications" }
@@ -125,12 +123,10 @@ cask "vlc", args: { appdir: "/Applications" }
 cask "whatsapp", args: { appdir: "/Applications" }
 cask "zoom", args: { appdir: "/Applications" }
 cask "zulu11"
-mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LastPass", id: 926036361
 mas "Magnet", id: 441258766
-mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Tomato One", id: 907364780
 mas "Trello", id: 1278508951
