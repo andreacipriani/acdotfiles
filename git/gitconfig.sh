@@ -49,4 +49,4 @@
 	submodulesummary = 1
 [push]
 	default = simple
-
+	autoSetupRemote = true
