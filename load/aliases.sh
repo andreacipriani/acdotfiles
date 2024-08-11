@@ -70,7 +70,7 @@ alias gogithub="cd /Users/$ANDREA_USERNAME/code/github/andreacipriani"
 alias goclient="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/client"
 alias goandroid="cd /Users/$ANDREA_USERNAME/code/spotify/acipriani/client-android"
 
-# Rails
+# Rails - unless you are starting a new project, better to always prepend bundle.
 alias rails="bundle exec rails"
 
 # Functions

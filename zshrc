@@ -64,5 +64,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/usr/bin:/usr/local/bin/"
-export PATH="/Users/acipriani/Library/Python/3.9/bin:$PATH"
-eval "$(/Users/andreacipriani/.local/bin/mise activate zsh)"
+export PATH="/Users/$ANDREA_USERNAME/Library/Python/3.9/bin:$PATH"
+
+#Export Mise
+MISE_PATH="/Users/$ANDREA_USERNAME/.local/bin/mise"
+eval "$($MISE_PATH activate zsh)"
+
+#Export Cargo
+export PATH="$PATH:/Users/$ANDREA_USERNAME/.cargo/bin"
