@@ -1,29 +1,29 @@
 # fzf custom functions, inspired by https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh https://github.com/junegunn/fzf/wiki/examples
 
 shelp() {
-    echo "□ shome - search from home\n□ ss - open in editor\n□ scd - change dir \n□ scdh - change dir from home\n□ shr - history\n□ sbr - brancheshistory\n□ spath - copy path"
+    echo "□ shome - search from home\n□ ss - open in editor\n□ scd - change dir \n□ scdh - change dir from home\n□ shr - history\n□ sbr - branch history\n□ spath - copy path"
 }
 
 #shome - search from home
 shome() {
   currentDir=$(pwd)
   cd
-  fzf-tmux
+  fzf --height 40% --reverse --border
   cd $currentDir
 }
 
 # ss - fuzzy search and open with editor
 ss() {
   local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${EDITOR:-$EDITOR} "${files[@]}"
+  IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && "${EDITOR:-vim}" "${files[@]}"
 }
 
 # scd - fuzzy cd into directories
 scd() {
   echo "executing scd"
   local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux +m)
+  dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m)
   echo $dir
   cd "$dir"
 }
@@ -32,22 +32,22 @@ scd() {
 scdh() {
   cd
   local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux +m)
+  dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m)
   cd "$dir"
 }
 
-# scat - fuzzy cat content of selecte file
+# scat - fuzzy cat content of selected file
 scat() {
   local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  cat ${files[@]}
+  IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && cat "${files[@]}"
 }
 
 # shr - fuzzy search in history
 shr() {
   local cmd
-  cmd=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf-tmux +s --tac | sed 's/ *[0-9]* *//')
-  echo "copyied command: $cmd"
+  cmd=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf --tac | sed 's/ *[0-9]* *//')
+  echo "copied command: $cmd"
   echo "$cmd" | pbcopy
 }
 
@@ -56,15 +56,15 @@ sbr() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
   branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+           fzf --height 40% --reverse --border +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
 # spwd - fuzzy search and copy path
 spath() {
   local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
   echo ${files[@]}
   echo ${files[@]} | pbcopy
-  echo "copyied path: ${files[@]}"
+  echo "copied path: ${files[@]}"
 }

@@ -8,10 +8,6 @@ tap "ericm/stonks"
 tap "github/gh"
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "mxcl/made"
 
 brew "ack"
 brew "atuin"
@@ -19,7 +15,7 @@ brew "automake"
 brew "bazelisk"
 brew "brew-cask-completion"
 brew "sqlite"
-brew "python@3.8"
+brew "python@3.12"
 brew "carthage"
 brew "clang-format"
 brew "cloc"
@@ -93,6 +89,9 @@ brew "yarn"
 brew "yq"
 brew "heroku/brew/heroku"
 brew "mxcl/made/swift-sh"
+brew "mise"
+
+# Quicklook Plugins
 brew "qlcolorcode"
 brew "qlstephen"
 brew "qlmarkdown"
@@ -102,6 +101,7 @@ brew "suspicious-package"
 brew "apparency"
 brew "quicklookase"
 brew "qlvideo"
+
 # Casks
 cask 'visual-studio-code'
 cask 'google-drive'
@@ -116,7 +116,6 @@ cask 'spotify'
 cask 'macdown'
 cask 'telegram'
 cask 'whatsapp'
-cask 'evernote'
 cask 'sourcetree'
 cask 'zoom'
 cask 'charles'
@@ -127,6 +126,7 @@ cask 'corretto8'
 cask 'google-cloud-sdk'
 cask 'rq'
 
+# Mac App Store
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
@@ -138,6 +138,4 @@ mas "Trello", id: 1278508951
 mas "WhatsApp", id: 1147396723
 mas "LastPass", id: 926036361
 mas "Slack", id: 803453959
-mas "Trello", id: 1278508951
-mas "Twitter", id: 409789998
 mas "Xcode", id: 497799835

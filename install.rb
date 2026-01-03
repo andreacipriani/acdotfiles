@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 require_relative("scripts/logger.rb")
 
-dootfiles_root = Dir.pwd
-oh_my_zsh_root = "#{dootfiles_root}/oh-my-zsh"
+dotfiles_root = Dir.pwd
+oh_my_zsh_root = "#{dotfiles_root}/oh-my-zsh"
 oh_my_zsh_themes_root = "#{oh_my_zsh_root}/themes"
 oh_my_zsh_custom_plugins_root = "#{oh_my_zsh_root}/custom/plugins"
 
@@ -10,55 +10,61 @@ oh_my_zsh_custom_plugins_root = "#{oh_my_zsh_root}/custom/plugins"
 puts "Running install.rb".info
 
 # Install brew
-if `which brew`
+if system("command -v brew > /dev/null")
     puts "Brew is installed".success
 else
     puts "Installing brew".info
-    system("mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew")
+    system('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
 end
 
 # Install ohmyzsh
 if File.directory?(oh_my_zsh_root)
     puts "ohmyzsh is installed".success
-    system("upgrade_oh_my_zsh")
+    # Update is handled by zsh normally, but we can try to update here if needed
 else
     puts "Installing ohmyzsh".info
-    # Change the install directory with the ZSH environment variable
-    # This should create a ohmyzsh folder in the root of my dotfiles, which is gitignored
-    ENV['ZSH']=oh_my_zsh_root
-    system("sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"")
+    ENV['ZSH'] = oh_my_zsh_root
+    system("sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" \"\" --unattended")
 end
 
 # Make a symbolic link for the .zshrc 
-system("ln -sfn #{dootfiles_root}/zshrc #{ENV['HOME']}/.zshrc")
+system("ln -sfn #{dotfiles_root}/zshrc #{ENV['HOME']}/.zshrc")
 if File.symlink?(ENV['HOME']+'/.zshrc')
-    puts ".zshrc is symlinked from #{dootfiles_root}".success
+    puts ".zshrc is symlinked from #{dotfiles_root}".success
 else 
-    puts ".zshrc is not symlinked from #{dootfiles_root}".error
+    puts ".zshrc is not symlinked from #{dotfiles_root}".error
 end
 
 # Install all gems from Gemfile:
-puts "Running bundle install to install all gems in Gemile".info
-system("bundle install")
+if File.exist?("Gemfile")
+    puts "Running bundle install to install all gems in Gemfile".info
+    system("bundle install")
+end
 
-# Install fonts
+# Install fonts (Optional: maybe use brew for this now?)
 if File.directory?(ENV['HOME']+'/powerline-fonts')
     puts "Powerline-fonts are installed".success
 else
     puts "Installing powerline fonts".info
-    system("git clone git@github.com:powerline/fonts.git ~/powerline-fonts && cd ~/powerline-fonts && ./install.sh")
+    system("git clone https://github.com/powerline/fonts.git ~/powerline-fonts && cd ~/powerline-fonts && ./install.sh")
 end
 
 # Install ohmyzsh custom plugins
-if File.directory?(oh_my_zsh_custom_plugins_root+"/alias-tips")
-    puts "Alias-tips plugin is installed".success
-else 
-    puts "Installing alias-tips plugin".info
-    system("git clone https://github.com/djui/alias-tips.git #{oh_my_zsh_custom_plugins_root}/alias-tips")
+def install_plugin(root, name, url)
+    if File.directory?("#{root}/#{name}")
+        puts "#{name} plugin is installed".success
+    else 
+        puts "Installing #{name} plugin".info
+        system("git clone #{url} #{root}/#{name}")
+    end
 end
 
+install_plugin(oh_my_zsh_custom_plugins_root, "alias-tips", "https://github.com/djui/alias-tips.git")
+install_plugin(oh_my_zsh_custom_plugins_root, "zsh-autosuggestions", "https://github.com/zsh-users/zsh-autosuggestions")
+install_plugin(oh_my_zsh_custom_plugins_root, "zsh-syntax-highlighting", "https://github.com/zsh-users/zsh-syntax-highlighting.git")
+
 # Install bullet-train theme
-if File.exist?('./oh-my-zsh/themes/bullet-train.zsh-theme')
+if File.exist?("#{oh_my_zsh_themes_root}/bullet-train.zsh-theme")
     puts "bullet-train is installed".success
 else
     puts "Installing bullet-train".info
@@ -66,27 +72,48 @@ else
 end
 
 # Set up git config
-system("ln -sfn #{dootfiles_root}/git/gitconfig.sh #{ENV['HOME']}/.gitconfig")
+system("ln -sfn #{dotfiles_root}/git/gitconfig #{ENV['HOME']}/.gitconfig")
 if File.symlink?(ENV['HOME']+'/.gitconfig')
-    puts ".gitconfig is symlinked from #{dootfiles_root}".success
+    puts ".gitconfig is symlinked from #{dotfiles_root}".success
 else 
-    puts ".gitconfig is not symlinked from #{dootfiles_root}".error
+    puts ".gitconfig is not symlinked from #{dotfiles_root}".error
 end
 
 # Create code folder
-if File.directory?("/Users/#{ENV['USER']}/code/")
-    puts "code directory existed".success
+code_dir = "#{ENV['HOME']}/code"
+if File.directory?(code_dir)
+    puts "code directory exists".success
 else
     puts "creating code directory".info
-    system("mkdir /Users/#{ENV['USER']}/code/")
+    Dir.mkdir(code_dir)
 end
 
 # Install Xcode User Data
-if File.exist?(ENV['HOME']+'/Library/Developer/Xcode/UserData/FontAndColorThemes/AndreaCiprianiDark.xccolortheme')
-    puts "Xcode UserData folder exists".success
+xcode_user_data = "#{ENV['HOME']}/Library/Developer/Xcode/UserData/FontAndColorThemes/AndreaCiprianiDark.xccolortheme"
+if File.exist?(xcode_user_data)
+    puts "Xcode UserData exists".success
 else
-    puts "Installing Xcode UserData folder".info
-    system("rsync -r backups/Xcode/ /Users/#{ENV['USER']}/Library/Developer/Xcode")
+    puts "Installing Xcode UserData".info
+    system("rsync -r backups/Xcode/ #{ENV['HOME']}/Library/Developer/Xcode/")
 end
 
-system("brew bundle")
+# Install VS Code extensions
+if File.exist?('backups/vscode/extensions.txt')
+    puts "Installing VS Code extensions".info
+    installed_extensions = `code --list-extensions`.split("\n")
+    File.readlines('backups/vscode/extensions.txt').each do |line|
+        extension = line.strip
+        if installed_extensions.include?(extension)
+            puts "#{extension} is already installed".success
+        else
+            puts "Installing #{extension}".info
+            system("code --install-extension #{extension}")
+        end
+    end
+end
+
+# Run brew bundle
+if File.exist?("Brewfile")
+    puts "Running brew bundle".info
+    system("brew bundle")
+end

@@ -38,6 +38,12 @@ puts "Backing up Xcode UserData folder".info
 
 system("rsync -r /Users/#{ENV['USER']}/Library/Developer/Xcode/ backups/Xcode")
 
+puts "Backing up VS Code extensions".info
+`mkdir -p backups/vscode`
+extensions = `code --list-extensions`
+File.open('backups/vscode/extensions.txt', 'w') { |f| f.write(extensions) }
+puts "VS Code extensions backup updated with #{extensions.split.size} extensions".success
+
 puts "Make sure to manually sync Visual Studio Code configurations, this can't be automated".warning
 puts "Make sure to manually sync Alfred preferences, this can't be automated".warning
 puts "Make sure to manually sync iTerm preferences, this can't be automated".warning

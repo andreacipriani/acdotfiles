@@ -22,7 +22,7 @@
 [rebase]
 	autoStash = true
 [rerere]
-	enabled = true
+	enabled = false
 [difftool "opendiff"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

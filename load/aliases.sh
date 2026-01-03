@@ -19,7 +19,7 @@ alias ......="cd ../../../../.."
 alias la="ls -lA --sd"
 
 #Copy your public key
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="[ -f ~/.ssh/id_ed25519.pub ] && key=~/.ssh/id_ed25519.pub || key=~/.ssh/id_rsa.pub; cat $key | pbcopy && echo \"=> Public key ($key) copied to pasteboard.\""
 
 # Git aliases
 alias ga="git add -p"
@@ -28,7 +28,7 @@ alias gpr='git pull --rebase'
 alias gst="git status -sb"
 alias glog="git log --oneline --decorate"
 alias gp="git push origin HEAD"
-alias grbc="gitc rebase --continue"
+alias grbc="git rebase --continue"
 alias grm="git fetch && git rebase origin/master"
 alias grmi="git fetch && git rebase origin/master -i"
 alias gall="git add ."
@@ -39,8 +39,8 @@ alias gb='git branch'
 alias gac='git add -A && git commit -m'
 alias grbtaketheirs="git checkout --ours . && git add ."
 alias grbtakemine="git checkout --theirs . && git add ."
-alias gclean= "git gc --aggressive && git prune"
-alias gcpc="gitc cherry-pick --continue"
+alias gclean="git gc --aggressive && git prune"
+alias gcpc="git cherry-pick --continue"
 alias gcm="git commit -m"
 alias gcan="git commit --amend --no-edit"
 alias gdiff="git diff --color-moved"

@@ -7,7 +7,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' insert-tab pending
 
 ### Git completion
-completion='$(brew --prefix)/share/zsh/site-functions/_git'
+completion="$(brew --prefix)/share/zsh/site-functions/_git"
 
 if test -f $completion
 then

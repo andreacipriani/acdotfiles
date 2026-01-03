@@ -8,7 +8,7 @@
 	- `/load/path.sh` is loaded first
 	- zsh automcompletion suggestions are only inside `~/dotfiles/autocompletion`
 - All files under `work-encrypted/` will be encrypted
-- Run `ruby scripts/backup.rb` to save all changes
+- Run `ruby scripts/backup.rb` to save all changes (includes Gems, Brewfile, Xcode UserData, and VS Code extensions)
 
 ## Installation order:
 
@@ -23,7 +23,6 @@
 
 - Backup
   - Visual studio code
-    - extensions (~/.vscode/extensions)
     - settings: synced using Settings sync extension -> https://gist.github.com/andreacipriani/1ba00e8f9773857f46eae2845f8e9ac8
   - Xcode UserData folder
   - Alfred preferences

@@ -1,55 +1,349 @@
-source 'https://rubygems.org'
-
-gem 'activemodel'
-gem 'activerecord'
-gem 'activestorage'
-gem 'activesupport'
-gem 'atomos'
-gem 'bugsnag'
-gem 'builder'
-gem 'bundler'
-gem 'cgi'
-gem 'chartkick'
-gem 'cocoapods'
-gem 'coffee-rails'
-gem 'coffee-script'
-gem 'coffee-script-source'
-gem 'colored2'
-gem 'colorize'
-gem 'csv'
-gem 'cucumber'
-gem 'date'
-gem 'dbm'
-gem 'declarative'
-gem 'declarative-option'
-gem 'delegate'
-gem 'devise'
-gem 'did_you_mean'
-gem 'diff-lcs'
-gem 'e2mmap'
-gem 'encryptor'
-gem 'erubi'
-gem 'escape'
-gem 'etc'
-gem 'ethon'
-gem 'execjs'
-gem 'fcntl'
-gem 'ffi'
-gem 'fiddle'
-gem 'fileutils'
-gem 'forwardable'
-gem 'fourflusher'
-gem 'fuzzy_match'
-gem 'gh_inspector'
-gem 'globalid'
-gem 'nokogiri'
-gem 'openssl'
-gem 'rails'
-gem 'rake'
-gem 'rspec'
-gem 'rubocop'
-gem 'sentry-raven'
-gem 'sidekiq'
-gem 'simctl'
-gem 'sqlite3'
-gem 'yaml'
+abbrev
+actioncable
+actionmailbox
+actionmailer
+actionpack
+actiontext
+actionview
+activejob
+activemodel
+activerecord
+activestorage
+activesupport
+addressable
+amq-protocol
+artifactory
+atomos
+awesome_print
+aws-eventstream
+aws-partitions
+aws-sdk-core
+aws-sdk-kms
+aws-sdk-s3
+aws-sigv4
+axiom-types
+babosa
+base64
+bcrypt
+benchmark
+bibtex-ruby
+bigdecimal
+bindex
+bootsnap
+builder
+bundler
+bunny
+byebug
+capybara
+CFPropertyList
+cgi
+citeproc
+citeproc-ruby
+claide
+classifier-reborn
+coderay
+coercible
+colorator
+colored
+colored2
+commander
+concurrent-ruby
+connection_pool
+crass
+csl
+csl-styles
+cssminify2
+csv
+date
+debug
+declarative
+deep_merge
+delegate
+descendants_tracker
+devise
+did_you_mean
+diff-lcs
+digest
+digest-crc
+domain_name
+dotenv
+drb
+dry-core
+dry-inflector
+dry-logic
+dry-struct
+dry-types
+em-websocket
+emoji_regex
+english
+equalizer
+erb
+error_highlight
+erubi
+etc
+eventmachine
+excon
+execjs
+faraday
+faraday-cookie_jar
+faraday-em_http
+faraday-em_synchrony
+faraday-excon
+faraday-httpclient
+faraday-multipart
+faraday-net_http
+faraday-net_http_persistent
+faraday-patron
+faraday-rack
+faraday-retry
+faraday_middleware
+fast-stemmer
+fastimage
+fastlane
+fcntl
+feedjira
+ffi
+fiddle
+fileutils
+find
+foreman
+forwardable
+forwardable-extended
+gemoji
+getoptlong
+gh_inspector
+globalid
+google-apis-androidpublisher_v3
+google-apis-core
+google-apis-iamcredentials_v1
+google-apis-playcustomapp_v1
+google-apis-storage_v1
+google-cloud-core
+google-cloud-env
+google-cloud-errors
+google-cloud-storage
+google-protobuf
+googleauth
+highline
+hirb
+html-pipeline
+htmlcompressor
+http-cookie
+http_parser.rb
+httparty
+httpclient
+i18n
+ice_nine
+importmap-rails
+inflecto
+io-console
+io-nonblock
+io-wait
+ipaddr
+irb
+jbuilder
+jekyll
+jekyll-archives
+jekyll-email-protect
+jekyll-feed
+jekyll-get-json
+jekyll-gist
+jekyll-imagemagick
+jekyll-jupyter-notebook
+jekyll-link-attributes
+jekyll-minifier
+jekyll-paginate
+jekyll-paginate-v2
+jekyll-sass-converter
+jekyll-scholar
+jekyll-seo-tag
+jekyll-sitemap
+jekyll-theme-fermi
+jekyll-toc
+jekyll-twitter-plugin
+jekyll-watch
+jemoji
+jmespath
+json
+json-minify
+jwt
+kramdown
+kramdown-parser-gfm
+latex-decode
+libv8-node
+liquid
+listen
+logger
+loofah
+mail
+marcel
+matrix
+mercenary
+method_source
+mini_magick
+mini_mime
+mini_racer
+minima
+minitest
+msgpack
+multi_json
+multi_xml
+multipart-post
+mustermann
+mutex_m
+namae
+nanaimo
+naturally
+net-ftp
+net-http
+net-imap
+net-pop
+net-protocol
+net-smtp
+nio4r
+nkf
+nokogiri
+observer
+octokit
+octopress
+octopress-deploy
+octopress-escape-code
+octopress-hooks
+open-uri
+open3
+openssl
+optparse
+orm_adapter
+os
+ostruct
+pathname
+pathutil
+pg
+plist
+power_assert
+pp
+prettyprint
+prime
+prism
+pry
+pry-byebug
+pry-doc
+pry-rails
+pstore
+psych
+public_suffix
+puma
+racc
+rack
+rack-protection
+rack-session
+rack-test
+rackup
+rails
+rails-dom-testing
+rails-html-sanitizer
+railties
+rake
+rb-fsevent
+rb-inotify
+rbs
+rbtree
+rdoc
+readline
+redcarpet
+redis
+redis-client
+regexp_parser
+reline
+representable
+resolv
+resolv-replace
+responders
+retriable
+rexml
+rinda
+rouge
+rspec
+rspec-core
+rspec-expectations
+rspec-its
+rspec-mocks
+rspec-rails
+rspec-support
+rss
+ruby2_keywords
+rubygems-update
+rubyzip
+safe_yaml
+sass-embedded
+sassc
+sawyer
+sax-machine
+securerandom
+security
+selenium-webdriver
+set
+shellwords
+sidekiq
+signet
+simctl
+sinatra
+sinatra-activerecord
+singleton
+sorted_set
+spring
+spring-commands-rspec
+sprockets
+sprockets-rails
+sqlite3
+stimulus-rails
+stringio
+strscan
+syntax_suggest
+syslog
+tailwindcss-rails
+telegram-bot
+telegram-bot-ruby
+tempfile
+terminal-notifier
+terminal-table
+test-unit
+thor
+thread_safe
+tilt
+time
+timeout
+titlecase
+tmpdir
+trailblazer-option
+tsort
+tty-cursor
+tty-screen
+tty-spinner
+turbo-rails
+typeprof
+tzinfo
+uber
+uglifier
+un
+unicode-display_width
+unicode_utils
+uri
+virtus
+warden
+weakref
+web-console
+webrick
+websocket
+websocket-driver
+websocket-extensions
+word_wrap
+wwdc
+xcodeproj
+xcpretty
+xcpretty-travis-formatter
+xpath
+yaml
+yard
+zeitwerk
+zlib
