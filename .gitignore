@@ -9,6 +9,25 @@
 # Claude Code
 .claude/
 
+# Xcode backups - generated/cache/binary, not worth versioning
+backups/Xcode/Archives/
+backups/Xcode/DerivedData/
+backups/Xcode/DocumentationCache/
+backups/Xcode/DocumentationIndex/
+backups/Xcode/IB Support/
+backups/Xcode/iOS Device Logs/
+backups/Xcode/iOS DeviceSupport/
+backups/Xcode/macOS DeviceSupport/
+backups/Xcode/Products/
+backups/Xcode/*.xcuserstate
+backups/Xcode/*.xcstate
+backups/Xcode/IDEEditorInteractivityHistory
+backups/Xcode/IDEFindNavigatorScopes.plist
+backups/Xcode/SDKToSimulatorIndexMapping.plist
+backups/Xcode/SearchScopes.xcsclist
+# Duplicate of UserData/CodeSnippets/ - canonical Xcode path is UserData/
+backups/Xcode/CodeSnippets/
+
 # ohmyzsh
 oh-my-zsh
 
