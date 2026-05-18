@@ -54,7 +54,6 @@ BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=red
 
 # Oh My Zsh plugins
 plugins=(
-  alias-tips
   rbenv
   ruby
   git
