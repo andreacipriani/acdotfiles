@@ -30,7 +30,12 @@ if [[ -d "$(brew --prefix)/share/google-cloud-sdk" ]]; then
   source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 fi
 
-# NVM
+# NVM - lazy load so it doesn't slow down shell startup
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+  nvm() { unset -f nvm node npm npx yarn; source "$NVM_DIR/nvm.sh"; nvm "$@"; }
+  node() { unset -f nvm node npm npx yarn; source "$NVM_DIR/nvm.sh"; node "$@"; }
+  npm() { unset -f nvm node npm npx yarn; source "$NVM_DIR/nvm.sh"; npm "$@"; }
+  npx() { unset -f nvm node npm npx yarn; source "$NVM_DIR/nvm.sh"; npx "$@"; }
+  yarn() { unset -f nvm node npm npx yarn; source "$NVM_DIR/nvm.sh"; yarn "$@"; }
+fi

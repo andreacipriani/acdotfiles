@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 export ANDREA_USERNAME=$(whoami)
 export DOTFILES=$HOME/code/acdotfiles
 export ZSH=$DOTFILES/oh-my-zsh
@@ -65,8 +66,10 @@ plugins=(
 
 source "$ZSH/oh-my-zsh.sh"
 
-# Load autocompletions (after oh-my-zsh so compinit runs only once)
+# Load autocompletions
 source "$DOTFILES/autocompletion/autocompletion.sh"
 
 # Added by Antigravity
 export PATH="/Users/andreacipriani/.antigravity/antigravity/bin:$PATH"
+
+zprof
