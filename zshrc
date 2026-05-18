@@ -1,4 +1,3 @@
-zmodload zsh/zprof
 export ANDREA_USERNAME=$(whoami)
 export DOTFILES=$HOME/code/acdotfiles
 export ZSH=$DOTFILES/oh-my-zsh
@@ -53,6 +52,8 @@ BULLETTRAIN_DIR_EXTENDED=2
 BULLETTRAIN_GIT_BG=green
 BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=red
 
+ZSH_DISABLE_COMPFIX=true
+
 # Oh My Zsh plugins
 plugins=(
   rbenv
@@ -71,5 +72,3 @@ source "$DOTFILES/autocompletion/autocompletion.sh"
 
 # Added by Antigravity
 export PATH="/Users/andreacipriani/.antigravity/antigravity/bin:$PATH"
-
-zprof
