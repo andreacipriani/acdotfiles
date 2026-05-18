@@ -14,17 +14,12 @@ for file in "$DOTFILES"/load/*.sh; do
   fi
 done
 
-# Load encrypted work files if they exist
+# Load encrypted work files if they exist (skip files that are still encrypted)
 if [[ -d "$DOTFILES/work-encrypted/load" ]]; then
   for file in "$DOTFILES"/work-encrypted/load/*.sh; do
-    source "$file"
+    [[ "$(head -c 9 "$file" 2>/dev/null)" != $'\x00GITCRYPT' ]] && source "$file"
   done
 fi
-
-# Load autocompletions
-autoload -U compinit
-compinit
-source "$DOTFILES/autocompletion/autocompletion.sh"
 
 # Better history
 autoload -U up-line-or-beginning-search
@@ -70,6 +65,9 @@ plugins=(
 )
 
 source "$ZSH/oh-my-zsh.sh"
+
+# Load autocompletions (after oh-my-zsh so compinit runs only once)
+source "$DOTFILES/autocompletion/autocompletion.sh"
 
 # Added by Antigravity
 export PATH="/Users/andreacipriani/.antigravity/antigravity/bin:$PATH"
