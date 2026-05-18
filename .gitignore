@@ -6,6 +6,9 @@
 # Thumbnails
 ._*
 
+# Claude Code
+.claude/
+
 # ohmyzsh
 oh-my-zsh
 
