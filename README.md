@@ -9,6 +9,8 @@
 	- zsh automcompletion suggestions are only inside `~/dotfiles/autocompletion`
 - All files under `work-encrypted/` will be encrypted
 - Run `ruby scripts/backup.rb` to save all changes (includes Gems, Brewfile, Xcode UserData, and VS Code extensions)
+	- Xcode: backs up `~/Library/Developer/Xcode/` into `backups/Xcode/`; only `UserData/` (CodeSnippets, FontAndColorThemes, KeyBindings) and Templates are tracked in git — generated files are gitignored
+	- VS Code: extensions are saved to `backups/vscode/extensions.txt`; settings must be synced manually via the Settings Sync extension
 
 ## Installation order:
 
@@ -16,16 +18,14 @@
 - ruby
 - Clone the repo and run `ruby install.rb`
 - Setup iTerm by setting the theme (CMD+I, Colors tab, Load Presets, Import) and configuration (Profiles, Other Actions, Import JSON Profiles, select iterm/AndreaCipriani.json)
-- Setup Visual Studio code by syncing with account
-- Setup Alfred 
+- Setup Visual Studio Code by syncing with account
+- Setup Alfred
 
 ## TODO:
 
 - Backup
-  - Visual studio code
-    - settings: synced using Settings sync extension -> https://gist.github.com/andreacipriani/1ba00e8f9773857f46eae2845f8e9ac8
-  - Xcode UserData folder
-  - Alfred preferences
+  - Visual Studio Code settings: manual — use Settings Sync extension → https://gist.github.com/andreacipriani/1ba00e8f9773857f46eae2845f8e9ac8
+  - Alfred preferences: manual, no automation possible
 
 ### Credits
 
