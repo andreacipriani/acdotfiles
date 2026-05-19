@@ -99,16 +99,20 @@ end
 
 # Install VS Code extensions
 if File.exist?('backups/vscode/extensions.txt')
-    puts "Installing VS Code extensions".info
-    installed_extensions = `code --list-extensions`.split("\n")
-    File.readlines('backups/vscode/extensions.txt').each do |line|
-        extension = line.strip
-        if installed_extensions.include?(extension)
-            puts "#{extension} is already installed".success
-        else
-            puts "Installing #{extension}".info
-            system("code --install-extension #{extension}")
+    if system("command -v code > /dev/null 2>&1")
+        puts "Installing VS Code extensions".info
+        installed_extensions = `code --list-extensions`.split("\n")
+        File.readlines('backups/vscode/extensions.txt').each do |line|
+            extension = line.strip
+            if installed_extensions.include?(extension)
+                puts "#{extension} is already installed".success
+            else
+                puts "Installing #{extension}".info
+                system("code --install-extension #{extension}")
+            end
         end
+    else
+        puts "Skipping VS Code extensions: 'code' CLI not found. Install VS Code and run 'Install code command in PATH' from the Command Palette, then re-run this script.".warning
     end
 end
 
