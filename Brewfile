@@ -5,7 +5,6 @@ cask_args appdir: '/Applications'
 
 tap "buo/cask-upgrade"
 tap "github/gh"
-tap "homebrew/bundle"
 
 brew "ack"
 brew "atuin"
@@ -59,25 +58,15 @@ brew "tig"
 brew "tokei"
 brew "trash"
 brew "tree"
-brew "unrar"
 brew "vapor"
 brew "wget"
 brew "xcodegen"
-brew "xctool"
 brew "yarn"
 brew "yq"
 brew "mise"
 
 # Quicklook Plugins
-brew "qlcolorcode"
-brew "qlstephen"
 brew "qlmarkdown"
-brew "quicklook-json"
-brew "qlimagesize"
-brew "suspicious-package"
-brew "apparency"
-brew "quicklookase"
-brew "qlvideo"
 
 # Casks
 cask 'visual-studio-code'

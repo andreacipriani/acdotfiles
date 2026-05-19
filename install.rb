@@ -9,6 +9,10 @@ oh_my_zsh_custom_plugins_root = "#{oh_my_zsh_root}/custom/plugins"
 # Start Install script:
 puts "Running install.rb".info
 
+print "Is this a personal or corporate installation? (personal/corporate): "
+corporate = gets.chomp.downcase == "corporate"
+puts (corporate ? "Corporate installation: casks will be skipped" : "Personal installation: all packages will be installed").info
+
 # Install brew
 if system("command -v brew > /dev/null")
     puts "Brew is installed".success
@@ -41,7 +45,7 @@ if File.exist?("Gemfile")
     File.readlines("Gemfile").each do |line|
         gem_name = line.strip
         next if gem_name.empty?
-        system("gem", "install", gem_name, "--no-document")
+        system("gem", "install", gem_name, "--no-document", "--user-install")
     end
 end
 
@@ -123,5 +127,14 @@ end
 # Run brew bundle
 if File.exist?("Brewfile")
     puts "Running brew bundle".info
-    system("brew bundle")
+    if corporate
+        require 'tempfile'
+        Tempfile.create('Brewfile') do |f|
+            File.readlines("Brewfile").each { |l| f.write(l) unless l.strip.start_with?("cask") }
+            f.flush
+            system("brew bundle --file=#{f.path}")
+        end
+    else
+        system("brew bundle")
+    end
 end
