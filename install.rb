@@ -37,8 +37,12 @@ end
 
 # Install all gems from Gemfile:
 if File.exist?("Gemfile")
-    puts "Running bundle install to install all gems in Gemfile".info
-    system("bundle install")
+    puts "Installing gems from Gemfile".info
+    File.readlines("Gemfile").each do |line|
+        gem_name = line.strip
+        next if gem_name.empty?
+        system("gem", "install", gem_name, "--no-document")
+    end
 end
 
 # Install fonts (Optional: maybe use brew for this now?)
