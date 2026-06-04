@@ -40,6 +40,7 @@ ENABLE_CORRECTION="false"
 
 # Theme and prompt
 export TERM="xterm-256color"
+zstyle ':omz:alpha:lib:git' async-prompt force
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
   dir
