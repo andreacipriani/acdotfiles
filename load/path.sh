@@ -4,6 +4,9 @@ for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then fpath=($topic_folde
 # Basic Paths
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# Personal scripts
+export PATH="$DOTFILES/bin:$PATH"
+
 # Homebrew
 if [[ -f /opt/homebrew/bin/brew ]]; then
   eval $(/opt/homebrew/bin/brew shellenv)
