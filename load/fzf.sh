@@ -1,7 +1,7 @@
 # fzf custom functions, inspired by https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh https://github.com/junegunn/fzf/wiki/examples
 
 shelp() {
-    echo "□ shome - search from home\n□ ss - open in editor\n□ scd - change dir \n□ scdh - change dir from home\n□ shr - history\n□ sbr - branch history\n□ spath - copy path"
+    echo "□ shome - search from home\n□ ss - open in editor\n□ scd - change dir \n□ scdh - change dir from home\n□ shr - history\n□ sbr - branch history\n□ swt - cd into worktree (recent first)\n□ spath - copy path"
 }
 
 #shome - search from home
@@ -58,6 +58,19 @@ sbr() {
   branch=$(echo "$branches" |
            fzf --height 40% --reverse --border +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# swt - cd into a git worktree, sorted by most recent commit
+swt() {
+  local worktree
+  worktree=$(git worktree list --porcelain | awk '/^worktree /{path=$2} /^branch /{branch=$2; printf "%s\t%s\n", branch, path}' | \
+    while IFS=$'\t' read -r branch path; do
+      local date
+      date=$(git -C "$path" log -1 --format="%ci" 2>/dev/null)
+      printf "%s\t%s\t%s\n" "$date" "${branch##refs/heads/}" "$path"
+    done | sort -r | awk -F'\t' '{printf "%s\t%s\n", $2, $3}' | \
+    fzf --height 40% --reverse --border +m --with-nth=1 --delimiter=$'\t') &&
+  cd "$(echo "$worktree" | cut -f2)"
 }
 
 # spwd - fuzzy search and copy path

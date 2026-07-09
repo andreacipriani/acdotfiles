@@ -23,7 +23,8 @@ alias pubkey="[ -f ~/.ssh/id_ed25519.pub ] && key=~/.ssh/id_ed25519.pub || key=~
 
 # Git aliases
 alias ga="git add -p"
-alias gpm="git push origin master"
+alias gpom="git push origin master"
+alias gpm="git checkout master && git pull origin master"
 alias gpr='git pull --rebase'
 alias gst="git status -sb"
 alias glog="git log --oneline --decorate"

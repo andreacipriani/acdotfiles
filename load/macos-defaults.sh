@@ -31,3 +31,6 @@ defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 
 # Skip Xcode refactoring animation
 defaults write com.apple.dt.Xcode CodeFoldingAnimationSpeed -int 0
+
+# Show single touches in iOS Simulator
+defaults write com.apple.iphonesimulator ShowSingleTouches 1
